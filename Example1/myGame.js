@@ -1,9 +1,11 @@
 ﻿room = game.createRoom("room", "background.png") // 방 생성
 
 room.door = room.createObject("door", "door.png") // 문 생성
-room.door.setWidth(1700) // 크기 조절
-room.locateObject(room.door, 580, 370) // 문 배치
+room.door.setWidth(200) // 크기 조절
+room.locateObject(room.door, 115, 315) // 문 배치
 room.door.lock() // door 상태를 locked로 변경
+
+playSound("frontline.wav") // 멸공의 횃불 재생
 
 room.door.onClick = function() { // door를 클릭했을 때
 	if(room.door.isClosed()){ // door가 closed 상태이면
@@ -17,8 +19,27 @@ room.door.onClick = function() { // door를 클릭했을 때
 
 room.door.onOpen = function() { // door 상태가 open으로 변경되면 실행
 	room.door.setSprite("door-open.png") // 열린 문으로 변경
-	room.door.setWidth(1800) // 크기 조절
-	room.locateObject(room.door, 490, 340) // 문 배치
+	room.door.setWidth(200) // 크기 조절
+	room.locateObject(room.door, 115, 315) // 문 배치
+}
+
+room.taeguk = room.createObject("taeguk", "taeguk.png") // 태극기 생성
+room.taeguk.setWidth(100) // 크기 조절
+room.locateObject(room.taeguk, 100, 110) // 태극기 배치
+
+room.taeguk.onClick = function() { // taeguk을 클릭했을 때
+	showImageViewer("koreanflag.png");
+	printMessage("아! 나의 조국! 볼 때마다 벅차오른다!") // 메시지 출력
+}
+
+
+room.bookmu = room.createObject("bookmu", "bookmu.png") // 육군복무신조 생성
+room.bookmu.setWidth(100) // 크기 조절
+room.locateObject(room.bookmu, 270, 180) // 육군복무신조 배치
+
+room.bookmu.onClick = function() { // bookmu을 클릭했을 때
+	showImageViewer("bookmuin.jpg");
+	printMessage("우리의 결의!") // 메시지 출력
 }
 
 room.keypad = room.createObject("keypad", "숫자키-좌.png") // 오브젝트 생성
