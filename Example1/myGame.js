@@ -32,15 +32,23 @@ room.taeguk.onClick = function() { // taeguk을 클릭했을 때
 	printMessage("아! 나의 조국! 볼 때마다 벅차오른다!") // 메시지 출력
 }
 
-
 room.bookmu = room.createObject("bookmu", "bookmu.png") // 육군복무신조 생성
 room.bookmu.setWidth(100) // 크기 조절
-room.locateObject(room.bookmu, 270, 180) // 육군복무신조 배치
+room.locateObject(room.bookmu, 250, 170) // 육군복무신조 배치
 
 room.bookmu.onClick = function() { // bookmu을 클릭했을 때
 	showImageViewer("bookmuin.jpg");
 	printMessage("우리의 결의!") // 메시지 출력
 }
+
+room.bed1 = room.createObject("bed1", "bed1.png") // 침대 생성
+room.bed1.setWidth(275) // 크기 조절
+room.locateObject(room.bed1, 525, 387) // 침대 배치
+
+room.bed1.onClick = function() { // 침대을 클릭했을 때
+	printMessage("각이 참 잘 잡혀있다!") // 메시지 출력
+}
+
 
 room.keypad = room.createObject("keypad", "숫자키-좌.png") // 오브젝트 생성
 room.keypad.setWidth(50) // 크기 조절
